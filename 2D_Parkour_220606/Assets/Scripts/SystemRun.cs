@@ -15,14 +15,19 @@ namespace hyno
         
         [SerializeField, Header ("跑步速度"),Tooltip("這是角色的跑步速度"),Range(0,100)]
         private float speedRun = 3.5f;
-        [SerializeField, Header("跳躍高度"), Tooltip("這是角色的跳躍高度"), Range(100, 500)]
-        private float heightJump = 350;
+
         private Animator ani;
         private Rigidbody2D rig;
 
         #endregion
 
         #region 功能:系統方法
+
+        private void Run()
+        {
+            rig.velocity = new Vector2(speedRun, rig.velocity.y);
+        }
+
 
         #endregion
 
@@ -38,12 +43,15 @@ namespace hyno
         //開始事件:播放遊戲時執行一次
         private void Start()
         {
-            print("haro");
+            //print("haro");
         }
         //更新事件:每秒約60次
         private void Update()
         {
             //print("更新");
+
+            //
+            Run();
         }
         #endregion
 
