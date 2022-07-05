@@ -53,6 +53,18 @@ namespace hyno
             //
             Run();
         }
+
+
+        private void OnEnable()
+        {
+            
+        }
+
+        private void OnDisable()
+        {
+            rig.velocity = new Vector2(0, rig.velocity.y);
+        }
+
         #endregion
 
 
